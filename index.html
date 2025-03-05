@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Interactiva de Comandos Git</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Guía Interactiva de Comandos Git</h1>
+        <div class="subheader">Explicaciones detalladas y ejemplos de uso</div>
+    </header>
+    <main>
+        <div class="accordion">
+            <div class="accordion-header">
+                <h2>Configuración Inicial</h2>
+                <div class="accordion-icon"></div>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-body">
+                    <div class="command-description">
+                        <p>Antes de comenzar a usar Git, es necesario configurar tu identidad. Estos comandos establecen
+                            tu nombre y correo electrónico, que se usarán para identificar tus contribuciones en cada
+                            commit.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <span class="command">git config --global user.name "Tu Nombre"</span><br>
+                        <span class="command">git config --global user.email "tu@email.com"</span>
+                    </div>
+
+                    <div class="example-title">Ejemplo de uso:</div>
+                    <div class="code-block">
+                        <span class="command">git config --global user.name "María García"</span><br>
+                        <span class="command">git config --global user.email "maria.garcia@ejemplo.com"</span>
+                    </div>
+
+                    <div class="note">
+                        <strong>Nota:</strong> El flag <code>--global</code> hace que esta configuración se aplique a
+                        todos tus repositorios. Si quieres una configuración diferente para un repositorio específico,
+                        omite este flag y ejecuta los comandos dentro del repositorio.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                <h2>Comandos Básicos</h2>
+                <div class="accordion-icon"></div>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-body">
+                    <h3>git init</h3>
+                    <div class="command-description">
+                        <p>Inicializa un nuevo repositorio Git en el directorio actual, creando un subdirectorio oculto
+                            <code>.git</code> que contiene toda la base de datos y la estructura necesaria para el
+                            control de versiones.
+                        </p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git init</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">mkdir mi-proyecto</span><br>
+                        <span class="command">cd mi-proyecto</span><br>
+                        <span class="command">git init</span><br>
+                        <span># Salida: Initialized empty Git repository in /ruta/a/mi-proyecto/.git/</span>
+                    </div>
+
+                    <h3>git clone</h3>
+                    <div class="command-description">
+                        <p>Crea una copia local de un repositorio remoto. Esto descarga todas las versiones de cada
+                            archivo en el proyecto.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git clone [url]</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git clone https://github.com/usuario/repositorio.git</span><br>
+                        <span class="command">cd repositorio</span>
+                    </div>
+
+                    <h3>git add</h3>
+                    <div class="command-description">
+                        <p>Añade archivos al área de preparación (staging area). Los cambios marcados serán incluidos en
+                            el próximo commit.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git add [archivo]</span><br>
+                        <span class="command">git add .</span> <span># Añade todos los archivos modificados</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git add index.html</span> <span># Añade solo un archivo</span><br>
+                        <span class="command">git add css/</span> <span># Añade todo el directorio css</span><br>
+                        <span class="command">git add .</span> <span># Añade todos los archivos modificados</span>
+                    </div>
+
+                    <h3>git commit</h3>
+                    <div class="command-description">
+                        <p>Registra los cambios en el repositorio con un mensaje descriptivo que explica qué cambios se
+                            han realizado.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git commit -m "mensaje descriptivo"</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git commit -m "Añadir funcionalidad de inicio de sesión"</span>
+                    </div>
+
+                    <h3>git status</h3>
+                    <div class="command-description">
+                        <p>Muestra el estado actual del repositorio: archivos modificados, añadidos al área de
+                            preparación o no rastreados.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git status</span>
+                    </div>
+
+                    <h3>git log</h3>
+                    <div class="command-description">
+                        <p>Muestra el historial de commits, incluyendo autor, fecha y mensaje de cada commit.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git log</span><br>
+                        <span class="command">git log --oneline</span> <span># Versión resumida</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git log --oneline -n 5</span> <span># Muestra los últimos 5 commits en
+                            formato resumido</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                <h2>Ramas (Branches)</h2>
+                <div class="accordion-icon"></div>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-body">
+                    <div class="command-description">
+                        <p>Las ramas en Git te permiten desarrollar funcionalidades aisladas unas de otras. La rama
+                            predeterminada es <code>main</code> (anteriormente <code>master</code>).</p>
+                    </div>
+
+                    <h3>git branch</h3>
+                    <div class="command-description">
+                        <p>Lista todas las ramas locales en el repositorio actual. La rama activa se marca con un
+                            asterisco.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git branch</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git branch</span><br>
+                        <span>* main</span><br>
+                        <span> feature-login</span><br>
+                        <span> bugfix-header</span>
+                    </div>
+
+                    <h3>git branch [nombre]</h3>
+                    <div class="command-description">
+                        <p>Crea una nueva rama, pero no cambia a ella automáticamente.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git branch [nombre-de-rama]</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git branch feature-newsletter</span>
+                    </div>
+
+                    <h3>git checkout</h3>
+                    <div class="command-description">
+                        <p>Cambia entre ramas o restaura archivos del árbol de trabajo.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git checkout [nombre-de-rama]</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git checkout feature-newsletter</span><br>
+                        <span># Salida: Switched to branch 'feature-newsletter'</span>
+                    </div>
+
+                    <h3>git checkout -b</h3>
+                    <div class="command-description">
+                        <p>Crea una nueva rama y cambia a ella inmediatamente.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git checkout -b [nombre-de-rama]</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git checkout -b feature-pagos</span><br>
+                        <span># Salida: Switched to a new branch 'feature-pagos'</span>
+                    </div>
+
+                    <h3>git merge</h3>
+                    <div class="command-description">
+                        <p>Combina los cambios de una rama específica con la rama actual.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git merge [rama]</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git checkout main</span><br>
+                        <span class="command">git merge feature-login</span><br>
+                        <span># Esto fusiona la rama 'feature-login' dentro de 'main'</span>
+                    </div>
+
+                    <h3>git branch -d</h3>
+                    <div class="command-description">
+                        <p>Elimina una rama después de que sus cambios hayan sido fusionados.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git branch -d [rama]</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git branch -d feature-login</span><br>
+                        <span># Salida: Deleted branch feature-login (was 3e8f21a).</span>
+                    </div>
+
+                    <div class="note">
+                        <strong>Nota:</strong> Usa <code>git branch -D [rama]</code> para forzar la eliminación de una
+                        rama que tiene cambios no fusionados.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                <h2>Trabajo Remoto</h2>
+                <div class="accordion-icon"></div>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-body">
+                    <div class="command-description">
+                        <p>Los comandos para trabajar con repositorios remotos te permiten colaborar con otros
+                            desarrolladores, compartiendo cambios a través de un servidor centralizado como GitHub,
+                            GitLab o Bitbucket.</p>
+                    </div>
+
+                    <h3>git remote add</h3>
+                    <div class="command-description">
+                        <p>Vincula tu repositorio local con un repositorio remoto. Normalmente se usa "origin" como
+                            nombre del repositorio remoto principal.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git remote add [nombre] [url]</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git remote add origin https://github.com/usuario/repositorio.git</span>
+                    </div>
+
+                    <h3>git push</h3>
+                    <div class="command-description">
+                        <p>Envía los commits de tu rama local a la rama correspondiente en el repositorio remoto.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git push [remoto] [rama]</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git push origin main</span><br><br>
+                        <span># Para configurar el seguimiento y usar simplemente 'git push' después</span><br>
+                        <span class="command">git push -u origin feature-auth</span>
+                    </div>
+
+                    <h3>git pull</h3>
+                    <div class="command-description">
+                        <p>Obtiene los cambios del repositorio remoto y los fusiona automáticamente con tu rama local
+                            actual. Es una combinación de <code>git fetch</code> + <code>git merge</code>.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git pull [remoto] [rama]</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git pull origin main</span>
+                    </div>
+
+                    <h3>git fetch</h3>
+                    <div class="command-description">
+                        <p>Descarga cambios del repositorio remoto, pero no los fusiona con tu rama local. Esto te
+                            permite revisar los cambios antes de integrarlos.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git fetch [remoto]</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git fetch origin</span><br>
+                        <span class="command">git diff origin/main</span> <span># Ver diferencias antes de
+                            fusionar</span>
+                    </div>
+
+                    <div class="note">
+                        <strong>Diferencia entre pull y fetch:</strong> <code>git pull</code> descarga y fusiona
+                        automáticamente, mientras que <code>git fetch</code> solo descarga, permitiéndote revisar los
+                        cambios antes de fusionarlos manualmente con <code>git merge</code>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                <h2>Otros Comandos Útiles</h2>
+                <div class="accordion-icon"></div>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-body">
+                    <h3>git diff</h3>
+                    <div class="command-description">
+                        <p>Muestra las diferencias entre archivos, commits o ramas.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git diff</span> <span># Diferencias entre área de trabajo y área de
+                            preparación</span><br>
+                        <span class="command">git diff --staged</span> <span># Diferencias entre área de preparación y
+                            último commit</span><br>
+                        <span class="command">git diff [commit1] [commit2]</span> <span># Diferencias entre dos
+                            commits</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git diff main..feature-auth</span> <span># Diferencias entre dos
+                            ramas</span>
+                    </div>
+
+                    <h3>git reset</h3>
+                    <div class="command-description">
+                        <p>Deshace cambios o commits dependiendo de las opciones utilizadas.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git reset [archivo]</span> <span># Deshacer git add para un archivo
+                            específico</span><br>
+                        <span class="command">git reset</span> <span># Deshacer git add para todos los
+                            archivos</span><br>
+                        <span class="command">git reset --soft HEAD~1</span> <span># Deshacer último commit manteniendo
+                            los cambios</span><br>
+                        <span class="command">git reset --hard HEAD~1</span> <span># Eliminar último commit y sus
+                            cambios</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git add .</span><br>
+                        <span class="command">git reset index.html</span> <span># Saca index.html del área de
+                            preparación</span>
+                    </div>
+                    <div class="note">
+                        <strong>Precaución:</strong> <code>git reset --hard</code> elimina permanentemente los cambios.
+                        Úsalo con cuidado.
+                    </div>
+
+                    <h3>git stash</h3>
+                    <div class="command-description">
+                        <p>Guarda temporalmente los cambios que no están listos para ser committeados, permitiéndote
+                            cambiar de rama sin perder tu trabajo en progreso.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git stash</span> <span># Guarda cambios en el stash</span><br>
+                        <span class="command">git stash list</span> <span># Lista todos los stashes</span><br>
+                        <span class="command">git stash pop</span> <span># Aplica y elimina el último stash</span><br>
+                        <span class="command">git stash apply</span> <span># Aplica el último stash sin
+                            eliminarlo</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git stash save "Cambios en formulario de login"</span><br>
+                        <span class="command">git checkout main</span><br>
+                        <span class="command">git checkout feature-auth</span><br>
+                        <span class="command">git stash pop</span>
+                    </div>
+
+                    <h3>git tag</h3>
+                    <div class="command-description">
+                        <p>Marca puntos específicos en la historia del repositorio, normalmente usados para marcar
+                            versiones o releases.</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="command">git tag</span> <span># Lista todas las etiquetas</span><br>
+                        <span class="command">git tag [nombre]</span> <span># Crea una etiqueta ligera</span><br>
+                        <span class="command">git tag -a [nombre] -m "mensaje"</span> <span># Crea una etiqueta
+                            anotada</span>
+                    </div>
+                    <div class="example-title">Ejemplo:</div>
+                    <div class="code-block">
+                        <span class="command">git tag -a v1.0.0 -m "Primera versión estable"</span><br>
+                        <span class="command">git push origin v1.0.0</span> <span># Sube la etiqueta al remoto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                <h2>Flujo de Trabajo Común</h2>
+                <div class="accordion-icon"></div>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-body">
+                    <div class="command-description">
+                        <p>Un flujo de trabajo típico para colaborar en proyectos con Git incluye estos pasos:</p>
+                    </div>
+
+                    <ol class="workflow-steps">
+                        <li><strong>Clonar el repositorio o iniciar uno nuevo</strong>
+                            <div class="code-block">
+                                <span class="command">git clone https://github.com/usuario/repositorio.git</span>
+                                <span> # o </span>
+                                <span class="command">git init</span>
+                            </div>
+                        </li>
+
+                        <li><strong>Crear una nueva rama para trabajar</strong>
+                            <div class="code-block">
+                                <span class="command">git checkout -b feature/nueva-funcionalidad</span>
+                            </div>
+                        </li>
+
+                        <li><strong>Realizar cambios en los archivos</strong>
+                            <div class="code-block">
+                                <span># Editar archivos con tu editor preferido</span>
+                            </div>
+                        </li>
+
+                        <li><strong>Revisar los cambios</strong>
+                            <div class="code-block">
+                                <span class="command">git status</span><br>
+                                <span class="command">git diff</span>
+                            </div>
+                        </li>
+
+                        <li><strong>Añadir los cambios al área de preparación</strong>
+                            <div class="code-block">
+                                <span class="command">git add .</span>
+                            </div>
+                        </li>
+
+                        <li><strong>Hacer commit de los cambios</strong>
+                            <div class="code-block">
+                                <span class="command">git commit -m "Añadida funcionalidad X para resolver Y"</span>
+                            </div>
+                        </li>
+
+                        <li><strong>Actualizar tu rama con los cambios del remoto</strong>
+                            <div class="code-block">
+                                <span class="command">git pull origin main</span>
+                            </div>
+                        </li>
+
+                        <li><strong>Subir los cambios al repositorio remoto</strong>
+                            <div class="code-block">
+                                <span class="command">git push origin feature/nueva-funcionalidad</span>
+                            </div>
+                        </li>
+
+                        <li><strong>Crear Pull Request en GitHub/GitLab/Bitbucket</strong>
+                            <div class="note">
+                                Esto se hace a través de la interfaz web del servicio de alojamiento de Git.
+                            </div>
+                        </li>
+
+                        <li><strong>Después de la revisión, fusionar la rama a main</strong>
+                            <div class="code-block">
+                                <span class="command">git checkout main</span><br>
+                                <span class="command">git merge feature/nueva-funcionalidad</span><br>
+                                <span class="command">git push origin main</span>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <div class="note">
+                        <strong>Buenas prácticas:</strong>
+                        <ul>
+                            <li>Haz commits pequeños y frecuentes con mensajes descriptivos</li>
+                            <li>Actualiza tu rama desde la rama principal regularmente</li>
+                            <li>Resuelve conflictos lo antes posible</li>
+                            <li>Usa convenciones de nombrado para ramas (feature/, bugfix/, hotfix/, etc.)</li>
+                            <li>Implementa revisiones de código a través de pull requests</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Guía Interactiva de Comandos Git © 2025 | Curso de Programación Web Cómbita renace</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

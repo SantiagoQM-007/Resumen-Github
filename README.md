@@ -1,24 +1,35 @@
-# 🚀 Funciones Principales de GitHub
+# Guía Interactiva de Comandos Git
 
-Este repositorio está diseñado para **apoyar al grupo de programación** en el uso eficiente de GitHub, destacando sus principales funciones.
+## Descripción
+Este proyecto es una guía interactiva y completa de comandos Git, diseñada para ayudar a desarrolladores a comprender y utilizar Git de manera efectiva.
 
-## 🗂 Repositorios
-Gestiona y almacena proyectos de manera colaborativa. Ideal para trabajar en equipo y mantener el control de versiones.
+## Características
+- Interfaz interactiva con acordeones
+- Explicaciones detalladas de comandos Git
+- Ejemplos prácticos de uso
+- Documentación separada por secciones
 
-## 🛠 Issues
-Organiza y rastrea problemas fácilmente. Perfecto para planificar tareas, asignarlas y dar seguimiento al progreso.
+## Instalación
+1. Clonar el repositorio
+```bash
+git clone https://github.com/tu-usuario/guia-git.git
+```
 
-## 🔄 Pull Requests
-Revisa, comenta y fusiona cambios en el código. Un proceso esencial para la colaboración en equipo.
+2. Abrir `index.html` en tu navegador
 
-## 🤖 GitHub Actions
-Automatiza pruebas, despliegues y otros flujos de trabajo. Aumenta la productividad con tareas automatizadas.
+## Contenido
+- Configuración Inicial
+- Comandos Básicos
+- Trabajo con Ramas
+- Trabajo Remoto
+- Flujo de Trabajo Común
 
----
+## Contribuciones
+Las contribuciones son bienvenidas. Por favor, lee las guías de contribución antes de enviar un pull request.
 
-💡 **¿Por qué usar GitHub?**
-- Facilita la colaboración en equipo.
-- Asegura el control de versiones.
-- Centraliza la gestión de proyectos.
+## Licencia
+Open Source License
 
-¡Aprovecha estas funciones para llevar tus proyectos al siguiente nivel! 🚀
+## Autor
+-Santiago Quiroga Molina
+Curso de Programación Web Cómbita Renace
