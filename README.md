@@ -12,7 +12,7 @@ Este proyecto es una guía interactiva y completa de comandos Git, diseñada par
 ## Instalación
 1. Clonar el repositorio
 ```bash
-git clone https://github.com/tu-usuario/guia-git.git
+git clone https://github.com/tu-usuario/Resumen-Github.git
 ```
 
 2. Abrir `index.html` en tu navegador
