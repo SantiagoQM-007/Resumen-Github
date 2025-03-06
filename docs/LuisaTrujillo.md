@@ -10,4 +10,4 @@ Son todas los herramientas que existen dentro de GitHub, y se complementan entre
 Que contraseña uso, al ejecutar el comando git push? devido a que ubuntu siempre me pidio usuario y contraseña, y no me sive la de mi Github.
 
 ## Un consejo
-Si no puedes subir a la nube tus commit desde ubuntu, desde visual studio tambien se puede.
+Si no puedes subir a la nube tus commit desde ubuntu, desde visual studio tambien se puede, con el boton commit.
